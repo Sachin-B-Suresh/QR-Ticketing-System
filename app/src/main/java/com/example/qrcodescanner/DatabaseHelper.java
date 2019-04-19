@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private final Context context;
     SQLiteDatabase db;
-    private static final String DATABASE_PATH = "/data/data/com.example.loginsqlite/databases/";
+    private static final String DATABASE_PATH = "/data/data/com.example.qrcodescanner/databases/";
     private final String USER_TABLE = "user";
 
     public DatabaseHelper(Context context) {

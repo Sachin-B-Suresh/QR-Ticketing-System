@@ -13,11 +13,11 @@ import java.io.OutputStream;
 public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
 
     private final String LOGTAG="Scan QrCode";
-    private static final String DATABASE_NAME = "new_qrc.sqlite";
+    private static final String DATABASE_NAME = "my_qrc.sqlite";
     private static final int DATABASE_VERSION = 1;
     private final Context context;
     SQLiteDatabase db;
-    private static final String DATABASE_PATH = "/data/data/com.example.loginsqlite/databases/";
+    private static final String DATABASE_PATH = "/data/data/com.example.qrcodescanner/databases/";
     private final String USER_TABLE = "data";
     public QRcodeDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

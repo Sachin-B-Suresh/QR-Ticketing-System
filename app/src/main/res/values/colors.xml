@@ -3,12 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#23283a</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="pink">#fe104d</color>
     <color name="lightpink">#FBB8AC</color>
     <color name="orange">#FF9800</color>
     <color name="darkorange">#FF5722</color>
     <color name="green">#8BC34A</color>
     <color name="lightgreen">#DCEDC8</color>
     <color name="amber">#FFC110</color>
-
 </resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="@color/green">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:src="@drawable/rotary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Annotsav"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"
+            android:textSize="48sp"
+            android:textColor="#fff"
+            android:layout_marginTop="32dp"/>
+
+        <EditText
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:id="@+id/EditTextUsername"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/Username"
+            android:layout_marginTop="32dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:id="@+id/EditTextPassword"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"/>
+        <Button
+            android:drawableRight="@drawable/ic_send_black_24dp"
+            android:id="@+id/ButtonLogin"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Login"
+            android:textColor="#fff"
+            android:background="@drawable/buttonstyle"
+            android:layout_margin="24dp"/>
+</LinearLayout>

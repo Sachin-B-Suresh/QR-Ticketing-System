@@ -8,6 +8,9 @@
     <string name="AboutUs">About Us</string>
     <string name="ScanTicket">Scan Ticket</string>
     <string name="AdminLoginHere">Admin? Login Here</string>
+    <string name="choose_file">Choose a CSV file to upload from...</string>
+    <string name="choose">Choose</string>
+    <string name="importBtn">Import</string>
     <string name="description1">The Rotary movement in Belgaum began with the formation of Rotary Club of Belgaum on the 5th of December 1941, with 18 members. Ours is the second oldest club of the RI District 3170, and also a leading club engaged in Community, Vocational and International service. After 77 years of continuous community service, our club has 93 members. There is a perfect mix of wisdom, maturity, youth and energy. This gives us immense courage and confidence to take up most challenging tasks.Let it be fellowship, leadership or a service project .</string>
     <string name="the_rotary_club_of_belgaum">The Rotary Club of Belgaum</string>
     <string name="about_annotsav">About Annotsav</string>

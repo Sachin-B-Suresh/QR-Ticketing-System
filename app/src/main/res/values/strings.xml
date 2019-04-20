@@ -8,4 +8,7 @@
     <string name="AboutUs">About Us</string>
     <string name="ScanTicket">Scan Ticket</string>
     <string name="AdminLoginHere">Admin? Login Here</string>
+    <string name="choose_file">Choose a CSV file to upload from...</string>
+    <string name="choose">Choose</string>
+    <string name="importBtn">Import</string>
 </resources>

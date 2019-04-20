@@ -1,11 +1,19 @@
 package com.example.qrcodescanner;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
     private final String LOGTAG="Scan QrCode";
@@ -48,6 +56,15 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
                 String code = cus.getString( cus.getColumnIndex("code") );
                 Log.d(LOGTAG,"Database query result:"+code );
             }
+        }
+    }
+
+    public void populateDB(Uri uri) throws IOException {
+        FileReader file = new FileReader(uri.getPath());
+        BufferedReader buffer = new BufferedReader(file);
+        String line;
+        while ((line = buffer.readLine()) != null) {
+            insertRecord(line.trim());
         }
     }
 }

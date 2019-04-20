@@ -32,11 +32,8 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("Drop table if exists "+TABLE_NAME);
-        onCreate(db);
-
-
     }
+
     public void insertRecord(String code)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -66,5 +63,34 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
         while ((line = buffer.readLine()) != null) {
             insertRecord(line.trim());
         }
+    }
+
+    public boolean checkQRcodeExist(String qrcode){
+        String[] columns = {"code"};
+        SQLiteDatabase db= this.getReadableDatabase();
+
+        String selection = "code=?";
+        String[] selectionArgs = {qrcode};
+
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+
+        cursor.close();
+        close();
+
+        if(count > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean consumeQRcode(String qrcode)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] columns = {"qrcode"};
+        db.delete(TABLE_NAME, "qrcode = ?", new String[] { qrcode });
+        db.close();
+        return true;
     }
 }

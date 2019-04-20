@@ -91,8 +91,8 @@ public class AdminActivity extends AppCompatActivity {
 
                 //show filename
                 TextView filename = (TextView) findViewById(R.id.filename_view);
-                File file= new File(fileURI.getPath());
-                filename.setText(file.getPath());
+                String[] segments = fileURI.getPath().split("/");
+                filename.setText(segments[segments.length -1]);
                 //enable import button
                 Button importButton = (Button) findViewById(R.id.import_btn);
                 importButton.setEnabled(true);
@@ -113,7 +113,8 @@ public class AdminActivity extends AppCompatActivity {
             try{
                 pd.setMessage("Importing");
                 pd.show();
-                helper.populateDB(fileURI);
+                helper.populateDB(fileURI, this);
+                Toast.makeText(this, "Added records", Toast.LENGTH_LONG).show();
                 pd.dismiss();
             }catch(Exception ex){
                 ex.printStackTrace();

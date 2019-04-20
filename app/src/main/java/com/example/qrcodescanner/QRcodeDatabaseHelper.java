@@ -1,5 +1,6 @@
 package com.example.qrcodescanner;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -62,7 +63,17 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void populateDB(Uri uri) throws Exception {
+    public void populateDB(Uri uri, Activity act) throws Exception {
+        InputStream inputStream = act.getContentResolver().openInputStream(uri);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(
+                inputStream));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            insertRecord(line.trim());
+        }
+        inputStream.close();
+        //parcelFileDescriptor.close();
+        /*
         File file = new File(new URI(uri.getPath()));
         FileReader fileReader = new FileReader(file);
         BufferedReader buffer = new BufferedReader(fileReader);
@@ -70,6 +81,7 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
         while ((line = buffer.readLine()) != null) {
             insertRecord(line.trim());
         }
+        */
     }
 
 

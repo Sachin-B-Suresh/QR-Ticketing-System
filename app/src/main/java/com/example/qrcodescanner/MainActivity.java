@@ -16,6 +16,7 @@ import com.blikoon.qrcodescanner.QrCodeActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button btnScan;
+    Button instruction;
     TextView txtLogin;
     private final String LOGTAG="Scan QrCode";
     ProgressDialog progressDialog;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         helper.getAll();
         btnScan=(Button)findViewById(R.id.ButtonScan);
         txtLogin=(TextView)findViewById(R.id.TextViewLogin);
+        instruction=(Button)findViewById(R.id.ButtonInstruction);
 
         progressDialog= new ProgressDialog(this);
         qrcodedatabaseHelper = new QRcodeDatabaseHelper(MainActivity.this);
@@ -55,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
                                     }
         );
 
+        instruction.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            startActivity(new Intent(MainActivity.this,AboutUs.class));
+                                        }
+                                    }
+        );
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -66,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             //Getting the passed result
             final String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(LOGTAG,"Have scan result in your app activity :"+ result);
-           /* boolean isExist = qrcodedatabaseHelper.checkQRcodeExist(result);
+            boolean isExist = qrcodedatabaseHelper.checkQRcodeExist(result);
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             if(isExist){
                 Log.d(LOGTAG,"inside if exist");
@@ -92,9 +102,6 @@ public class MainActivity extends AppCompatActivity {
                         });
                 alertDialog.show();
             }
-            */
-
-
         }
     }
 }

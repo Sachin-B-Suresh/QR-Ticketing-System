@@ -31,7 +31,6 @@
         android:id="@+id/file_chooser_btn"
         android:text="@string/choose"
         android:padding="8dp"
-        android:onClick="chooseFile"
         />
     <Button
         android:layout_width="wrap_content"
@@ -39,7 +38,6 @@
         android:id="@+id/import_btn"
         android:text="@string/importBtn"
         android:layout_marginTop="32dp"
-        android:onClick="importRecords"
         android:background="@drawable/buttonstyle"
         />
 

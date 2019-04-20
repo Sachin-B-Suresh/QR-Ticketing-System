@@ -17,18 +17,38 @@ import java.io.IOException;
 
 public class AdminActivity extends AppCompatActivity {
 
-    private static final int READ_REQUEST_CODE = 42;
-    private QRcodeDatabaseHelper helper = new QRcodeDatabaseHelper(this);
-    private static Uri fileURI = null;
+   private static final int READ_REQUEST_CODE = 42;
+    private QRcodeDatabaseHelper helper;
+    private static Uri fileURI;
+    Button filech;
+    Button imp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        Button importButton = (Button) findViewById(R.id.import_btn);
-        importButton.setEnabled(false);
+        helper = new QRcodeDatabaseHelper(this);
 
+        filech=(Button)findViewById(R.id.file_chooser_btn);
+
+        imp=(Button)findViewById(R.id.import_btn);
+
+        filech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performFileSearch();
+            }
+        });
+
+        imp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                importRecords(v);
+            }
+        });
     }
+
+
     /**
      * Fires an intent to spin up the "file chooser" UI and select an image.
      */
@@ -45,8 +65,8 @@ public class AdminActivity extends AppCompatActivity {
         // Filter to show only images, using the image MIME data type.
         // If one wanted to search for ogg vorbis files, the type would be "audio/ogg".
         // To search for all documents available via installed storage providers,
-        // it would be "*/*".
-        intent.setType("text/plain");
+        // it would be "*".
+        intent.setType("*/*");
 
         startActivityForResult(intent, READ_REQUEST_CODE);
     }
@@ -67,12 +87,12 @@ public class AdminActivity extends AppCompatActivity {
             fileURI = null;
             if (resultData != null) {
                 fileURI = resultData.getData();
-                Log.d("FILECHOSEN", "Uri: " + fileURI.toString());
+                Log.d("FILECHOSEN", "Uri: " + fileURI.getPath());
 
                 //show filename
                 TextView filename = (TextView) findViewById(R.id.filename_view);
                 File file= new File(fileURI.getPath());
-                filename.setText(file.getName());
+                filename.setText(file.getPath());
                 //enable import button
                 Button importButton = (Button) findViewById(R.id.import_btn);
                 importButton.setEnabled(true);
@@ -80,9 +100,10 @@ public class AdminActivity extends AppCompatActivity {
         }
     }
 
-    public void chooseFile(View view) {
+   /* public void chooseFile(View view) {
         performFileSearch();
     }
+    */
 
     public void importRecords(View view) {
         TextView filename = (TextView) findViewById(R.id.filename_view);
@@ -94,7 +115,7 @@ public class AdminActivity extends AppCompatActivity {
                 pd.show();
                 helper.populateDB(fileURI);
                 pd.dismiss();
-            }catch(IOException ex){
+            }catch(Exception ex){
                 ex.printStackTrace();
                 Toast.makeText(this, "Sorry, Couldn't read file.", Toast.LENGTH_LONG).show();
             }

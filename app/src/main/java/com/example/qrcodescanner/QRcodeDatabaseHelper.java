@@ -7,13 +7,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URI;
 
 public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
     private final String LOGTAG="Scan QrCode";
@@ -56,14 +59,16 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void populateDB(Uri uri) throws IOException {
-        FileReader file = new FileReader(uri.getPath());
-        BufferedReader buffer = new BufferedReader(file);
+    public void populateDB(Uri uri) throws Exception {
+        File file = new File(new URI(uri.getPath()));
+        FileReader fileReader = new FileReader(file);
+        BufferedReader buffer = new BufferedReader(fileReader);
         String line;
         while ((line = buffer.readLine()) != null) {
             insertRecord(line.trim());
         }
     }
+
 
     public boolean checkQRcodeExist(String qrcode){
         String[] columns = {"code"};

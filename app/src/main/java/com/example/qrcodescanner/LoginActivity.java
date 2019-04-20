@@ -38,9 +38,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean isExist = databaseHelper.checkUserExist(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
 
                 if(isExist){
-
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);     //Admin activity to be coded
-                    intent.putExtra("username", edtUsername.getText().toString());
+                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);     //Admin activity to be coded
                     startActivity(intent);
                     progressDialog.dismiss();
                 } else {

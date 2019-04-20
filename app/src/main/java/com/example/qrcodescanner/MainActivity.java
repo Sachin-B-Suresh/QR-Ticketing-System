@@ -21,14 +21,17 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     QRcodeDatabaseHelper qrcodedatabaseHelper;
     private static final int REQUEST_CODE_QR_SCAN = 101;
+    QRcodeDatabaseHelper helper;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        helper = new QRcodeDatabaseHelper(this);
+        helper.insertRecord("asdf123!@#");
+        helper.insertRecord("fuckoffanay");
+        helper.getAll();
         btnScan=(Button)findViewById(R.id.ButtonScan);
         txtLogin=(TextView)findViewById(R.id.TextViewLogin);
 
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             //Getting the passed result
             final String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(LOGTAG,"Have scan result in your app activity :"+ result);
-            boolean isExist = qrcodedatabaseHelper.checkQRcodeExist(result);
+           /* boolean isExist = qrcodedatabaseHelper.checkQRcodeExist(result);
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             if(isExist){
                 Log.d(LOGTAG,"inside if exist");
@@ -89,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                         });
                 alertDialog.show();
             }
+            */
+
+
         }
     }
 }

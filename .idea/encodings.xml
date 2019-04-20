@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/auth.sqlite" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/qrc.sqlite" charset="ISO-8859-1" />
+    <file url="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/oneplus-oneplus_a3003-474ff42b/data/data/com.example.qrcodescanner/databases/qrc.sqlite-wal" charset="ISO-8859-1" />
+  </component>
+</project>

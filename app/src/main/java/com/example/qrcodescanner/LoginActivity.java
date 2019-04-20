@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         edtUsername=(EditText) findViewById(R.id.EditTextUsername);
         edtPassword=(EditText) findViewById(R.id.EditTextPassword);
         databaseHelper = new DatabaseHelper(LoginActivity.this);
-        databaseHelper.insertRecord();
         databaseHelper.getAll();
         progressDialog= new ProgressDialog(this);
 

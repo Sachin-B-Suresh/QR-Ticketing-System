@@ -31,6 +31,9 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create TABLE "+TABLE_NAME+"(code text primary key)");
+        ContentValues contentValues= new ContentValues();
+        contentValues.put(COL1,"asdf123!@#");
+        db.insert(TABLE_NAME, null, contentValues);
     }
 
     @Override
@@ -93,8 +96,8 @@ public class QRcodeDatabaseHelper extends SQLiteOpenHelper {
     public boolean consumeQRcode(String qrcode)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        String[] columns = {"qrcode"};
-        db.delete(TABLE_NAME, "qrcode = ?", new String[] { qrcode });
+        String[] columns = {"code"};
+        db.delete(TABLE_NAME, "code = ?", new String[] { qrcode });
         db.close();
         return true;
     }

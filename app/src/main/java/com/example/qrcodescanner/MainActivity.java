@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helper = new QRcodeDatabaseHelper(this);
-        helper.insertRecord("asdf123!@#");
-        helper.insertRecord("fuckoffanay");
         helper.getAll();
         btnScan=(Button)findViewById(R.id.ButtonScan);
         txtLogin=(TextView)findViewById(R.id.TextViewLogin);

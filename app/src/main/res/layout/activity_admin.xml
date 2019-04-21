@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filename_view"
-        android:text="something.csv"
+        android:text=""
         android:textSize="20sp"
         android:padding="16dp"
         />
@@ -31,6 +31,7 @@
         android:id="@+id/file_chooser_btn"
         android:text="@string/choose"
         android:padding="8dp"
+
         />
     <Button
         android:layout_width="wrap_content"
@@ -39,6 +40,8 @@
         android:text="@string/importBtn"
         android:layout_marginTop="32dp"
         android:background="@drawable/buttonstyle"
+        android:textColor="@color/qr_code_white"
+        android:backgroundTint="@color/gold"
         />
 
 

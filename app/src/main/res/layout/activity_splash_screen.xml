@@ -5,15 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SplashScreen"
-    android:background="@drawable/gradiant">
+    android:background="@drawable/gradiant"
+    android:gravity="center">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="@string/SplashScreenActivity"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:textColor="#fff"/>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/club_logo"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logoDescription"/>
+
 </LinearLayout>

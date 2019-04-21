@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="48dp"
-        android:background="@color/green">
+        android:background="@color/redDarker">
 
         <ImageView
             android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/Annotsav"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#fff"
+            android:textColor="@color/qr_code_white"
             android:textSize="44sp" />
 
 
@@ -39,7 +39,8 @@
             <Button
                 android:id="@+id/ButtonInstruction"
                 android:background="@drawable/buttonstyle"
-                android:textColor="#fff"
+                android:backgroundTint="@color/gold"
+                android:textColor="@color/qr_code_white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/AboutUs"
@@ -55,14 +56,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/lightgreen">
+        android:background="@color/qr_code_flash_light_text_color">
         <Button
             android:id="@+id/ButtonScan"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/ScanTicket"
-            android:textColor="#fff"
+            android:textColor="@color/qr_code_white"
             android:background="@drawable/buttonstyle"
+            android:backgroundTint="@color/gold"
             android:layout_margin="16dp"/>
         <TextView
             android:id="@+id/TextViewLogin"

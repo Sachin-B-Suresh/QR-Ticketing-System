@@ -8,7 +8,7 @@
     tools:context=".LoginActivity"
     android:padding="32dp"
     android:gravity="center"
-    android:background="@color/green">
+    android:background="@color/qr_code_white">
 
 
         <ImageView
@@ -34,7 +34,11 @@
             android:layout_height="wrap_content"
             android:hint="@string/Username"
             android:layout_marginTop="32dp"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColorHint="@color/redDarker"
+            android:textColorHighlight="@color/redDarker"
+            android:outlineAmbientShadowColor="@color/redDarker"
+            android:outlineSpotShadowColor="@color/redDarker"/>
 
         <EditText
             android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
@@ -44,7 +48,11 @@
             android:hint="@string/Password"
             android:inputType="textPassword"
             android:layout_marginTop="8dp"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColorHint="@color/redDarker"
+            android:textColorHighlight="@color/redDarker"
+            android:outlineAmbientShadowColor="@color/redDarker"
+            android:outlineSpotShadowColor="@color/redDarker"/>
         <Button
             android:drawableRight="@drawable/ic_send_black_24dp"
             android:id="@+id/ButtonLogin"
@@ -53,5 +61,6 @@
             android:text="@string/Login"
             android:textColor="#fff"
             android:background="@drawable/buttonstyle"
-            android:layout_margin="24dp"/>
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/gold"/>
 </LinearLayout>

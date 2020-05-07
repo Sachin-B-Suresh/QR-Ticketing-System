@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class AdminActivity extends AppCompatActivity {
 
-   private static final int READ_REQUEST_CODE = 42;
+    private static final int READ_REQUEST_CODE = 42;
     private QRcodeDatabaseHelper helper;
     private static Uri fileURI;
     Button filech;

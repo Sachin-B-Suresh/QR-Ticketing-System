@@ -8,7 +8,7 @@
     tools:context=".LoginActivity"
     android:padding="32dp"
     android:gravity="center"
-    android:background="@color/qr_code_white">
+    android:background="@color/purpleLighter">
 
 
         <ImageView
@@ -20,12 +20,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Annotsav"
-            android:textStyle="bold"
+            android:layout_marginTop="32dp"
             android:fontFamily="serif-monospace"
+            android:text="@string/Annotsav"
+            android:textColor="#949494"
             android:textSize="48sp"
-            android:textColor="#fff"
-            android:layout_marginTop="32dp"/>
+            android:textStyle="bold" />
 
         <EditText
             android:drawableLeft="@drawable/ic_person_outline_black_24dp"

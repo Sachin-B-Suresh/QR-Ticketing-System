@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/qr_code_white"
+    android:background="@color/purpleLighter"
     tools:context=".MainActivity">
 
     <ImageView

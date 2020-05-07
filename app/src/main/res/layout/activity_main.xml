@@ -56,7 +56,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/qr_code_flash_light_text_color">
+        android:background="@color/purpleLighter">
         <Button
             android:id="@+id/ButtonScan"
             android:layout_width="150dp"
